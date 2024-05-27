@@ -1,0 +1,138 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/css/NTC.css">
+    <link rel="stylesheet" href="/static/css/fstdropdown.css">
+    <link rel="stylesheet" href="/static/css/fstdropdown.min.css">
+    <meta charset="utf-8" />
+    <header>
+        <nav class="navigation">
+
+            <a href="/BhajanaMandhiralu">BhajanaMandhiralu</a>
+            <a class="BM" href="/NewTempleConstruction">New Temple Construction</a>
+            <a href="/RenovationOfTemple">Renovation of Temple</a>
+            <a href="/Reports">Reports</a>
+            
+            
+            <a href="/Login" style="margin-right:100px;size:100%; font-size:30px;"><ion-icon
+                    name="log-out-outline"></ion-icon></a>
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+            <script scr='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js'></script>
+            <script src='https://code.jquery.com/jquery-3.4.0.min.js'
+                integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+            <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js'
+                integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1'
+                crossorigin='anonymous'></script>
+            <script src="/static/javascript/submit1.js"></script>
+            <script src="/static/javascript/fstdropdown.js"></script>
+            <script src="/static/javascript/fstdropdown.min.js"></script>
+        </nav>
+    </header>
+</head>
+
+<body>
+
+    <h1>New Temple Construction</h1>
+    <div class="inputs">
+        <div class="inputfields">
+
+            <div class="phases">
+
+                <lable>Phases:</lable> <br> <br>
+                <select class="dropdown1" id="Phases">
+                    <option style="display:none;">0 options selected</option>
+                    <option value="Phase1">Phase1</option>
+                    <option value="Phase2">Phase2</option>
+                </select> <br> <br>
+            </div>
+            <div class="row">
+                <div class="col1">
+                    <lable>Name of the District:</lable> <br> <br>
+                    <select class="fstdropdown-select" id="District_name" multiple="multiple" data-opened="false" onclick="dropdown()">
+                       
+                        <option value="Anakapalli">Anakapalli</option>
+                        <option value="Ananthapuram">Ananthapuram</option>
+                        <option value="Annamayya">Annamayya</option>
+                        <option value="Alluri Seetharamaraju">Alluri Seetharamaraju</option>
+                        <option value="Bapatla">Bapatla</option>
+                        <option value="Chittoor">Chittoor</option>
+                        <option value="East Godavari">East Godavari</option>
+                        <option value="Eluru">Eluru</option>
+                        <option value="Guntur">Guntur</option>
+                        <option value="Kakinada">Kakinada</option>
+                        <option value="Konaseema">Konaseema</option>
+                        <option value="Krishna">Krishna</option>
+                        <option value="Kurnool">Kurnool</option>
+                        <option value="Nandyal">Nandyal</option>
+                        <option value="NTR">NTR</option>
+                        <option value="Palnadu">Palnadu</option>
+                        <option value="Parvathipuram Manyam">Parvathipuram Manyam</option>
+                        <option value="Prakasam">Prakasam</option>
+                        <option value="SPS Nellore">SPS Nellore</option>
+                        <option value="Srikakulam">Srikakulam</option>
+                        <option value="Sri Sathyasai">Sri Sathyasai</option>
+                        <option value="Tirupathi">Tirupathi</option>
+                        <option value="Vizianagaram">Vizianagaram</option>
+                        <option value="Vishakapatnam">Vishakapatnam</option>
+                        <option value="West Godavari">West Godavari</option>
+                        <option value="YSR Kadapa">YSR Kadapa</option>
+                    </select>
+                </div>
+                <div class="col2">
+                    <lable>Name of the Constituency:</lable> <br> <br>
+                    <input id="Constituency_name" type="text" onkeypress="return charevent(event)" name="constituency" required />
+                </div>
+                <div class="col3">
+                    <lable>Name of the Mandal:</lable> <br> <br>
+                    <select class="fstdropdown-select" id="Mandal_name" multiple="multiple"data-opened="false" name="Mandal" required >
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col1">
+                    <lable>Name of the Village:</lable> <br> <br>
+                    <input id="Village_name" type="text" onkeypress="return charevent(event)" name="Village" required />
+                </div>
+                <div class="col2">
+                    <lable>Name of the Colony:</lable> <br> <br>
+                    <input id="Colony_name" type="text" onkeypress="return charevent(event)" name="Colony" required />
+                </div>
+                <div class="col3">
+                    <lable>Documents of Requestee:</lable> <br> <br>
+                    <div class="file">
+                        <form id="form-id">
+                        <input id="documents" type="file" name="file" /></form> <br> <br>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col1">
+                    <lable>PhoneNumber:</lable> <br> <br>
+                    <input id="Phone_number" type="tel" onkeypress="return numevent(event)" maxlength="10" name="phone"
+                        required />
+                </div>
+                <div class="col2">
+                    <lable>Population of the Village:</lable> <br> <br>
+                    <input id="Village_population" type="text" onkeypress="return numevent(event)" name="population"
+                        required />
+                </div>
+                <div class="col3">
+                    <lable>SurveyNo:</lable> <br> <br>
+                    <input id="Survey_no" type="text" onkeypress="return specialchar(event)" name="surveyno" required />
+                </div>
+            </div>
+            <div class="submit">
+                <button id="submit" type="submit" onclick="submit1()">submit</button>
+            </div>
+            <div class="clear">
+                <button type="reset" name="reset" onclick="location.href='/NewTempleConstruction';">Reset</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
